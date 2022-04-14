@@ -1,0 +1,36 @@
+class Solution(object):
+    def myAtoi(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        MAX_int = 2 ** 31 -1
+        MIN_int = - 2 ** 31
+        newString = 0
+        i=0
+        negative = 1
+        while i < len(s) and s[i] == ' ':
+            i += 1
+        if i<len(s) and s[i] == '-':
+            i += 1
+            negative = -1
+            
+        elif i<len(s) and s[i] == '+':
+            i += 1
+            
+        checker = set('0123456789')
+        while i<len(s) and s[i] in checker:
+            newString = newString * 10 + int(s[i])
+            i += 1
+        
+        newString = newString * negative
+        if newString < 0:
+            return max(newString, MIN_int)
+        return min(newString, MAX_int)
+        
+        
+                
+        
+                    
+                
+        
