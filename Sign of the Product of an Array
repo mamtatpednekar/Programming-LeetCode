@@ -1,0 +1,20 @@
+class Solution(object):
+    def arraySign(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        value = 1
+        countOfNeg = 0
+        if 0 in nums:
+            return 0
+        else:
+            for i in nums:
+                if i < 0:
+                    countOfNeg += 1
+        if countOfNeg % 2 == 0:
+            return value
+        else:
+            return -1
+                    
+        
