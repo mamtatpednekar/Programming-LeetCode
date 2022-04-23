@@ -1,0 +1,16 @@
+def meanderingArray(unsorted):
+    # Write your code here
+    output = []
+    #5,2,7,8,-2,25,25
+    unsorted.sort()
+    #-2,2,5,7,8,25,25
+    i = 0
+    j = len(unsorted)-1
+    while i<j:
+            output.append(unsorted[j])
+            j -= 1
+            output.append(unsorted[i])
+            i += 1
+    if i==j:
+        output.append(unsorted[i])
+    return output
