@@ -1,0 +1,16 @@
+class Solution(object):
+    def shuffle(self, nums, n):
+        """
+        :type nums: List[int]
+        :type n: int
+        :rtype: List[int]
+        """
+        output = []
+        i = 0
+        while i < n and n<len(nums):
+            output.append(nums[i])
+            output.append(nums[n])
+            i += 1
+            n += 1
+        return output
+        
