@@ -1,0 +1,17 @@
+class Solution(object):
+    def interpret(self, command):
+        """
+        :type command: str
+        :rtype: str
+        """
+        output = ""
+        value = "o"
+        i = 0
+        while i < len(command):
+            if command[i].isalpha():
+                output += command[i]
+            elif command[i] =='(' and command[i+1] ==')':
+                output += value
+            i += 1
+        return output
+        
