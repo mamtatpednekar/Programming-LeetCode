@@ -1,3 +1,4 @@
+#Recursive
 class Solution(object):
     def fib(self, n):
         """
@@ -9,4 +10,26 @@ class Solution(object):
         if n == 1:
             return 1
         return self.fib(n-1) + self.fib(n-2)
+        
+#Iterative
+class Solution(object):
+    def fib(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        stack = []
+        stack.append(n)
+        sum = 0
+        while len(stack) > 0:
+            n = stack.pop()
+            if n == 0:
+                sum += 0
+            elif n == 1:
+                sum += 1
+            else:
+                stack.append(n-1)
+                stack.append(n-2)
+        return sum
+        
         
