@@ -1,0 +1,23 @@
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        hash = {}
+        for n in nums:
+            if n in hash:
+                hash[n] += 1
+            else:
+                hash[n] = 1
+        return heapq.nlargest(k, hash, key=hash.get)
+        
+         
+        
+        
+        
+         
+        
+        
+            
