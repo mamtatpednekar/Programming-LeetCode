@@ -1,0 +1,19 @@
+class Solution(object):
+    def findDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """ 
+        hash = {}
+        output = []
+        for n in nums:
+            if n in hash:
+                hash[n] += 1
+                if n not in output:
+                    output.append(n)
+            else:
+                hash[n] = 1
+        return output
+        
+        
+        
