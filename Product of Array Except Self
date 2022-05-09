@@ -1,0 +1,19 @@
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        output = []
+        i = 0
+        while i < len(nums):
+            sum = 1
+            j = 0
+            while j < len(nums):
+                if j != i:
+                    sum *= nums[j]
+                j += 1
+            output.append(sum)
+            i += 1
+        return output
+        
