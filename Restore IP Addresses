@@ -1,0 +1,23 @@
+class Solution(object):
+    def restoreIpAddresses(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+        res = []
+        if len(s) > 12:
+            return res
+        
+        def check(i, dots, IP):
+            if dots == 4 or i == len(s):
+                res.append(IP[:-1])
+                return 
+            if dots > 4:
+                return
+            
+            for j in range(i, min(len(s), i+3)):
+                if int(s[i:j+1]) < 256 and (i==j or s[i]!="0"):
+                    check(j+1, dots+1, IP + s[i:j+1] + ".")
+                    
+        check(0,0,"")
+        return res
