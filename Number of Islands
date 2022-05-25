@@ -1,0 +1,35 @@
+class Solution(object):
+    def depth_first_search(self, grid, visited, i, j, rows, cols):
+        if i >= rows or i < 0:
+            return
+        if j >= cols or j < 0:
+            return
+        if grid[i][j] == '0':
+            return
+        if (i,j) in visited:
+            return
+        
+        visited.add((i,j))
+        self.depth_first_search(grid, visited, i+1, j, rows, cols)
+        self.depth_first_search(grid, visited, i-1, j, rows, cols)
+        self.depth_first_search(grid, visited, i, j+1, rows, cols)
+        self.depth_first_search(grid, visited, i, j-1, rows, cols)
+        
+        
+    
+    def numIslands(self,grid):
+        if grid == None:
+            return 0
+        
+        result = 0
+        visited = set()
+        rows = len(grid)
+        cols = len(grid[0])
+        
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == '1' and (i,j) not in visited:
+                    result += 1
+                    self.depth_first_search(grid, visited, i, j, rows, cols)
+                    
+        return result
