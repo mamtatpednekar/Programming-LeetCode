@@ -1,0 +1,13 @@
+class Solution(object):
+    def restoreString(self, s, indices):
+        """
+        :type s: str
+        :type indices: List[int]
+        :rtype: str
+        """
+        output = ''
+        i = 0
+        while i < len(indices):
+            output += s[indices.index(i)]
+            i += 1
+        return output
