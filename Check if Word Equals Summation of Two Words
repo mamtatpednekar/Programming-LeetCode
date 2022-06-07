@@ -1,0 +1,28 @@
+class Solution(object):
+    def isSumEqual(self, firstWord, secondWord, targetWord):
+        """
+        :type firstWord: str
+        :type secondWord: str
+        :type targetWord: str
+        :rtype: bool
+        """
+        sum1=""
+        sum2=""
+        sum3=""
+        for i in firstWord:
+			sum1 += str(ord(i)-97)
+        for i in secondWord:
+            sum2 += str(ord(i)-97)
+        for i in targetWord:
+			sum3 += str(ord(i)-97)
+        sum1=int(sum1)
+        sum2=int(sum2)
+        sum3=int(sum3)
+        if sum1+sum2==sum3:
+            return True
+        return False
+            
+            
+        
+        
+        
