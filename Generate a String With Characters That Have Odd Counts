@@ -1,0 +1,22 @@
+class Solution(object):
+    def generateTheString(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        output = []
+        if n == 0:
+            return output
+        if n % 2 == 0:
+            while n-1:
+                output.append('a')
+                n -= 1
+            output.append('b')
+        else:
+            while n:
+                output.append('a')
+                n -= 1
+        return output
+    
+    
+        
