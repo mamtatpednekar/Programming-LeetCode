@@ -1,0 +1,10 @@
+class Solution(object):
+    def areOccurrencesEqual(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        count = Counter(s)
+        return len(set(count.values())) == 1
+
+        
