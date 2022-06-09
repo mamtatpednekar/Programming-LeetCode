@@ -1,0 +1,34 @@
+class Solution(object):
+    def divideArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        i = 0 
+        hash = {}
+        if len(nums) % 2 != 0:
+            return False
+        if len(set(nums)) == len(nums):
+            return False
+        if len(set(nums)) > len(nums)//2:
+            return False
+        for num in nums:
+            if nums.count(num) % 2 !=0:
+                return False
+        for num in nums:
+            if num in hash:
+                hash[num] += 1
+            else:
+                hash[num] = 1
+        
+        for num in nums:
+            hash[num] -= 1
+            if hash[num] == 0:
+                del hash[num]
+                
+        if hash:
+            return False
+        else:
+            return True
+                
+        
