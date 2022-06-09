@@ -1,0 +1,16 @@
+class Solution(object):
+    def findFinalValue(self, nums, original):
+        """
+        :type nums: List[int]
+        :type original: int
+        :rtype: int
+        """
+        if original not in nums:
+            return original
+        for num in nums:
+            if original * 2 in nums:
+                original = original * 2
+            else:
+                return original * 2
+
+        
