@@ -1,0 +1,16 @@
+class Solution(object):
+    def kthDistinct(self, arr, k):
+        """
+        :type arr: List[str]
+        :type k: int
+        :rtype: str
+        """
+        check = 1
+        for i in arr:
+            if arr.count(i) == 1:
+                if check == k:
+                    return i
+                else:
+                    check += 1
+        return ""
+        
