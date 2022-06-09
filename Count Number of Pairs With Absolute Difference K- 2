@@ -1,0 +1,18 @@
+class Solution(object):
+    def countKDifference(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        count=0
+        hash={}
+        for i in nums:
+            if i in hash:
+                hash[i]+=1
+            else:
+                hash[i]=1
+        for i in list(set(nums)):
+            if i in hash and (k+i) in hash:
+                count += hash[i]*hash[k+i]
+        return count
