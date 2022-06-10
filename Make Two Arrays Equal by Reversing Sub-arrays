@@ -1,0 +1,19 @@
+class Solution(object):
+    def canBeEqual(self, target, arr):
+        """
+        :type target: List[int]
+        :type arr: List[int]
+        :rtype: bool
+        """
+        if len(target) != len(arr):
+            return False
+        if len(set(target)) != len(set(arr)):
+            return False
+        for num in target:
+            if target.count(num) != arr.count(num):
+                return False
+        for num in target:
+            if num not in arr:
+                return False
+        return True
+        
