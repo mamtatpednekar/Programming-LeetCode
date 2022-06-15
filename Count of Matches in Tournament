@@ -1,0 +1,15 @@
+class Solution(object):
+    def numberOfMatches(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        match = []
+        team = 0
+        while n//2 >= 1:
+            match.append(n//2)
+            team = n - (n//2)
+            n = team 
+        return sum(match)
+            
+        
