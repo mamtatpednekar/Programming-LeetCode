@@ -1,0 +1,17 @@
+class Solution(object):
+    def maximum69Number (self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        count = 1
+        output = ""
+        stringnum = str(num)
+        for i in stringnum:
+            if i == '6' and count !=0:
+                output+='9'
+                count -=1
+            else:
+                output+=i
+        return output
+        
