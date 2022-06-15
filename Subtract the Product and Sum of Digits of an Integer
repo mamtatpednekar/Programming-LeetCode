@@ -1,0 +1,16 @@
+class Solution(object):
+    def subtractProductAndSum(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        sumc = 0
+        prod = 1
+        i = 0
+        string = str(n)
+        for num in string:
+            prod *= int(num)
+            sumc += int(num)
+        return prod-sumc
+        
+        
