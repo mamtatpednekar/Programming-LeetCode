@@ -1,0 +1,9 @@
+class Solution(object):
+    def minimumSum(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        string = str(num)
+        listofnum = sorted(string)
+        return int(listofnum[0] + listofnum[3]) + int(listofnum[1] + listofnum[2])
