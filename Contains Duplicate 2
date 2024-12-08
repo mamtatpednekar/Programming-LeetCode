@@ -1,0 +1,14 @@
+class Solution(object):
+    def containsNearbyDuplicate(self, nums, k):
+        slidingWindow = set()
+        L = 0
+
+        for R in range(len(nums)):
+            if R - L > k:
+                slidingWindow.remove(nums[L])
+                L+=1
+            if(nums[R] in slidingWindow):
+                return True
+            slidingWindow.add(nums[R])
+        return False
+        
