@@ -7,4 +7,21 @@ class Solution(object):
         if len(nums) == len(set(nums)):
             return False
         return True
+
+
+
+//2 
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        setForCheckingDuplicate = set()
+        for num in nums:
+            if num in setForCheckingDuplicate:
+                return True
+            setForCheckingDuplicate.add(num)
+        return False
+        
         
